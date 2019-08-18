@@ -49,12 +49,12 @@ int u2f_fabrication_procedure() {
   cfg.prog = &lfs_emubd_prog;
   cfg.erase = &lfs_emubd_erase;
   cfg.sync = &lfs_emubd_sync;
-  cfg.read_size = 16;
-  cfg.prog_size = 16;
-  cfg.block_size = 512;
-  cfg.block_count = 400;
+  cfg.read_size = 1;
+  cfg.prog_size = 1;
+  cfg.block_size = 0x20000;
+  cfg.block_count = 3;
   cfg.block_cycles = 50000;
-  cfg.cache_size = 128;
+  cfg.cache_size = 0x1000;
   cfg.lookahead_size = 16;
   lfs_emubd_create(&cfg, "lfs-root");
 
